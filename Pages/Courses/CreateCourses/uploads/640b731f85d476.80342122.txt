@@ -1,0 +1,4 @@
+1) Instaliraj Android studio
+2) Provezbaj  react native pa cak i malo androida.
+3) Provezbaj Angulara
+4) Do Vestacke 10 dana.

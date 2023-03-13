@@ -1,0 +1,36 @@
+body{
+    background-image: url('./images/LeafPattern.jpg');
+    background-repeat: repeat;
+}
+
+.form{
+    width: 500px;
+    margin:auto;
+}
+.forma{
+    border-radius: 10px;
+    color:black;
+    background-color:white;
+    margin-top: 100px;
+    border:1px solid black;
+    padding:30px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.Form-Input{
+    display: flex;
+    flex-direction: row;
+    margin:auto;
+    width: 300px;
+    margin-bottom: 20px;
+    }
+.text-input{
+    margin-left: 10px;
+}
+
+
+.button-submit{
+    padding:10px;
+    background-color: lightgray;
+}

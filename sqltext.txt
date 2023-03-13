@@ -1,0 +1,12 @@
+$sql = "SELECT * FROM kurs WHERE Created=true AND ";
+
+$result = $con->query($sql);
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+}
+
+=======
+$sql = "SELECT * FROM kurs WHERE Created=true AND ";
+if ($con->query($sql)) {
+    while ($row = $result->fetch_assoc()) {
+}
