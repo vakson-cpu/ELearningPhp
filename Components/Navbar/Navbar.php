@@ -14,12 +14,11 @@
       if (isset($_SESSION["UserName"]) == true) {
 
         if ($_SESSION["tip"] == "admin") {
-          echo "<li class='menu__group'><a href='Raspored.php' class='menu__link r-link text-underlined'>Dashboard</a></li>";
           echo "<li class='menu__group'><a href='/WebProgramiranje/Pages/User/ApproveTeacher.php' class='menu__link r-link text-underlined'>Zahtevi</a></li>";
         }
         if($_SESSION["tip"]=="predavac"){
           echo "<li class='menu__group'><a href='/WebProgramiranje/Pages/Courses/CreateCourses/MyCourses.php' class='menu__link r-link text-underlined'>My Courses</a></li>";
-          echo "<li class='menu__group'><a href='/WebProgramiranje/Pages/Courses/OnCourse.php' class='menu__link r-link text-underlined'>My Courses</a></li>";
+          echo "<li class='menu__group'><a href='/WebProgramiranje/Pages/Courses/OnCourse.php' class='menu__link r-link text-underlined'>Insights</a></li>";
           echo "<li class='menu__group'><a href='/WebProgramiranje/Pages/Courses/CreateCourses/CreateCourse.php' class='menu__link r-link text-underlined'>Create Course</a></li>";
 
         }
