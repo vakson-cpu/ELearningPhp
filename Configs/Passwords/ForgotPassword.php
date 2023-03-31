@@ -1,6 +1,7 @@
 <?php include '../../Shared/connection.php'; ?>
 <?php include '../../Functions/globalFuncs.php' ?>
 <?php include '../MailerBot.php' ?>
+<?php include '../../Shared/CustomResponse.php' ?>
 <?php
 if (isset($_POST['Reset'])) {
 
@@ -13,8 +14,8 @@ if (isset($_POST['Reset'])) {
         $sql = "UPDATE `admin` SET `Password`='$hashedPwd'";
         if ($con->query($sql)) {
             PasswordReset($user->user['Email'], $generatedCode, $user->user['UserName']);
-            echo "<script>alert('Uspesno Poslat mejl')</script>";
-            header('location:index.php');
+            // echo "<script>alert('Uspesno Poslat mejl')</script>";
+            echo '<script>window.location.href="/WebProgramiranje/index.php";</script>';
             return;
         } else {
             echo "<script>alert('BezUspesno Poslat mejl')</script>";
@@ -25,8 +26,8 @@ if (isset($_POST['Reset'])) {
         $sql = "UPDATE korisnik SET `Password`='$hashedPwd'";
         if ($con->query($sql)) {
             PasswordReset($user->user['Email'], $generatedCode, $user->user['UserName']);
-            echo "<script>alert('Uspesno Poslat mejl')</script>";
-            header('location:index.php');
+            // echo "<script>alert('Uspesno Poslat mejl')</script>";
+            echo '<script>window.location.href="/WebProgramiranje/index.php";</script>';
             return;
         } else {
             echo "<script>alert('BezUspesno Poslat mejl')</script>";
@@ -37,8 +38,8 @@ if (isset($_POST['Reset'])) {
         $sql = "UPDATE Predavac SET `Password`='$hashedPwd'";
         if ($con->query($sql)) {
             PasswordReset($user->user['Email'], $generatedCode, $user->user['UserName']);
-            echo "<script>alert('Uspesno Poslat mejl')</script>";
-            header('location:index.php');
+            // echo "<script>alert('Uspesno Poslat mejl')</script>";
+            echo '<script>window.location.href="/WebProgramiranje/index.php";</script>';
             return;
         } else {
             echo "<script>alert('BezUspesno Poslat mejl')</script>";
