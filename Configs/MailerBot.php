@@ -46,7 +46,7 @@ $message = "<div class='card' style=' border: 1px solid grey;width: 340px; heigh
     if ($emailSent) {
      echo'<script>alert("Email successfuly sent")</script>';   
     } else {
-        echo'<script>alert("Email successfuly sent")</script>';   
+        echo'<script>alert("Email failed to send")</script>';   
     }
 }
 
@@ -61,7 +61,8 @@ function PasswordReset($reciever,$Sifra,$NameOfUser){
             <div class='card_content' style='padding: 10px;'>
             <h4>Izvolite vasu novu sifru: </h4>
             <p>'$Sifra'</p>
-            <a href='http://localhost/WebProgramiranje/Pages/InsertCode.php?UserName=$NameOfUser'>Postovani,uspesno ste resetovali sifru  saljemo vam novu sifru.</a>
+            <p>Postovani,uspesno ste resetovali sifru  saljemo vam novu sifru.</p>
+            <a href='http://localhost/WebProgramiranje/Components/SignIn/LoginForm.php'>Log-In</a>
             </div>
         </div>";
         $headers = "MIME-Version: 1.0" . "\r\n";
@@ -75,6 +76,6 @@ function PasswordReset($reciever,$Sifra,$NameOfUser){
         if ($emailSent) {
          echo'<script>alert("Email successfuly sent")</script>';   
         } else {
-            echo'<script>alert("Email successfuly sent")</script>';   
+            echo'<script>alert("Email failed to send")</script>';   
         }
     }
