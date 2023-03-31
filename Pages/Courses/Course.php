@@ -32,7 +32,10 @@ if ($result->num_rows > 0) {
 
 
 echo "</div>";
-
+echo"<br/>";
+echo"<br/>";
+echo"<br/>";
+echo"<br/>";
 include "../../Components/Footer/footer.php";
 ?>
 <style>
