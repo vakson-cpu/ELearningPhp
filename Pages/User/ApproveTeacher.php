@@ -1,6 +1,6 @@
 <?php 
 include_once '../../Shared/connection.php';
-include_once '../../Components/Navbar/Navbar.php';
+// include_once '../../Components/Navbar/Navbar.php';
 
 
 
@@ -90,7 +90,7 @@ echo "</br>";
 
 
 
-include_once '../../Components/Footer/footer.php';
+// include_once '../../Components/Footer/footer.php';
 ?>
 
 

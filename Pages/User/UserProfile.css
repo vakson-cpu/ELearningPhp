@@ -1,0 +1,122 @@
+.grid-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.news-container {
+  height: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  margin-bottom: 50px;
+}
+
+.sidebar {
+  width: 100%;
+  background-color: rgb(232, 232, 232);
+  height: 100%;
+  border-right: 1px solid black;
+}
+.user--profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.user--image {
+  height: 250px;
+  margin: 25px;
+}
+
+.user--image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+}
+
+.user--info {
+  font-weight: bold;
+  text-align: center;
+  border-top: 2px dashed black;
+  border-bottom: 2px dashed black;
+}
+.centriraj-text {
+  text-align: center;
+  margin: auto;
+  display: grid;
+  align-items: center;
+}
+.news-image {
+  height: 200px;
+  width: 250px;
+  margin: auto;
+  display: block;
+}
+.user--dashboard-title {
+  margin-bottom: 40px;
+}
+.news-info {
+  background-color: white;
+  margin: auto;
+  border: 1px dashed black;
+  width: 700px;
+  height: 400px;
+  margin-bottom: 40px;
+  margin-top: 10px;
+}
+
+.news-title {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.news-description {
+  text-align: center;
+  font-style: italic;
+  overflow: hidden;
+}
+
+.add-news-button {
+  margin-top: 30px;
+  padding: 20px;
+  float: right;
+  margin-right: 10px;
+}
+.centerTitle{
+  text-align: center;
+}
+.contact-form {
+  width: 800px;
+  margin: 0 auto;
+}
+.contact-label {
+  display: block;
+  margin-bottom: 10px;
+}
+.contact-inputs {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.contact-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: center;
+  margin: auto;
+  display: grid;
+  align-content: center;
+  width: 100px;
+}
+.contact-button:hover {
+  background-color: #45a049;
+}

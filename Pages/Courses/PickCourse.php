@@ -14,21 +14,29 @@ if ($tip == "korisnik") {
         $check = "SELECT * FROM userkurs WHERE userkurs.KorisnikId = '$UserName' AND userkurs.KursId= $KursId";
         $resultOf = $con->query($check);
         if ($resultOf->num_rows > 0) {
+            echo "<div class='message-wrapper'>";
+
             echo '<script>alert("You have already selected this course.")</script>';
             echo '<script>window.location.href="./CreateCourses/CourseDetails.php?IdKursa=' . $row['Id']  . '";</script>';
+            echo "</div>";
 
             return;
         }
         $sql = "INSERT INTO userkurs (KursId,KorisnikId) VALUES('$KursId','$UserName')";
 
         if ($con->query($sql) == true) {
+            echo "<div class='message-wrapper'>";
+
             echo "<h1 class='textSuccess'>You have successfuly enrolled in the course</h1>";
             echo "<a class='coursebutton' href='./CreateCourses/CourseDetails.php?IdKursa=" . $KursId . "'>Start the Course!</a>";
+            echo "</div>";
         }
     }
 } else {
-    echo "<h1 class='textSuccess'>Here You can view the course</h1>";
+    echo "<div class='message-wrapper'>";
+    echo "<h1 class='textSuccess'>Proceed to the course!</h1>";
     echo "<a class='coursebutton' href='./CreateCourses/CourseDetails.php?IdKursa=" . $KursId . "'>Start the Course!</a>";
+    echo "</div>";
 }
 
 
@@ -71,7 +79,18 @@ include '../../Components/Footer/footer.php';
 
     }
 
+    .message-wrapper {
+        background-color: #d4d2d2;
+        padding: 25px;
+        border-radius: 10px;
+        width: 500px;
+        margin: auto;
+        align-items: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+    }
+
     .coursebutton:hover {
-        background-color: lightgray;
+        background-color: #000001;
     }
 </style>

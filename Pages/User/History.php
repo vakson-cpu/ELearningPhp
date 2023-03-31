@@ -16,7 +16,7 @@ WHERE userkurs.KorisnikId = '$username'";
 function GetCompleted($number)
 {
     if ($number == 0)
-        return "Not Started";
+        return "Not Completed";
     return "Completed";
 }
 

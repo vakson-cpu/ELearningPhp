@@ -26,7 +26,7 @@ $to="$reciever";
 $message = "<div class='card' style=' border: 1px solid grey;width: 340px; height: 300px; background-color: rgb(252, 252, 252); overflow: hidden; border-radius: 15px;'>
         <div class='card_header' style='width: 100%; height: 50px; background-color: #f5ba1a; padding-left: 5px;padding-top: 2px;'>
         <div class='logo' style='margin-top: 5px; width: 85px; background-color: white; padding: 7px; border-radius: 15px;display:flex; justify-content: center;
-        align-items: center;'><b><span style='color: red;'>Waha Surgery</b></div>
+        align-items: center;'><b><span style='color: red;'>ELearning</b></div>
 
         </div>
         <div class='card_content' style='padding: 10px;'>
@@ -45,6 +45,7 @@ $message = "<div class='card' style=' border: 1px solid grey;width: 340px; heigh
     $emailSent = sendmail($to, "Hoce", "Potvrda Naloga", $message,  $headers);
     if ($emailSent) {
      echo'<script>alert("Email successfuly sent")</script>';   
+     return;
     } else {
         echo'<script>alert("Email failed to send")</script>';   
     }
@@ -72,7 +73,7 @@ function PasswordReset($reciever,$Sifra,$NameOfUser){
         $headers .= 'From: <vakson12@gmail.com' . "\r\n";
         $headers .= 'Cc: ' . $to . '' . "\r\n";
        // mail($to, $subject, $message, $headers);
-        $emailSent = sendmail($to, "Hoce", "Potvrda Naloga", $message,  $headers);
+        $emailSent = sendmail($to, "Hoce", "Password reset", $message,  $headers);
         if ($emailSent) {
          echo'<script>alert("Email successfuly sent")</script>';   
         } else {

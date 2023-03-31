@@ -14,7 +14,8 @@ WHERE kurs.Created= true AND kurs.Id NOT IN (
   WHERE userkurs.KorisnikId = '$UserName'
 )";
 $result = $con->query($sql);
-echo "<h1 class='centerText '>Here is a list of courses we offer! If you are interested in taking one please click enroll button</h1>";
+
+echo "<div class='message-wrapper '><h1 class='centerText '>Here is a list of courses we offer! If you are interested in taking one please click enroll button</h1></div>";
 echo"</br>";
 echo"</br>";
 echo "<div>";
@@ -28,7 +29,7 @@ if ($result->num_rows > 0) {
         echo"</br>";
     }
 } else
-    echo "<h1 class='centerText marginBottom'>We are sorry to inform you, there are no courses available at the moment!</h1>";
+echo "<div class='message-wrapper '><h1 class='centerText marginBottom'>We are sorry to inform you, there are no courses available at the moment!</h1></div>";
 
 
 echo "</div>";
@@ -44,11 +45,24 @@ include "../../Components/Footer/footer.php";
         background-color: green;
 
     }
-
+    .message-wrapper {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        width: 800px;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        border: 5px solid green;
+        
+    }
     .course-card {
         width: 400px;
         padding: 20px;
-        background-color: white;
+        background-image: url("../../Assets/BookShelf.jpg");
+        background-size: cover;
         text-align: center;
         border-radius: 10px;
         border: 3px solid green;
@@ -62,17 +76,23 @@ include "../../Components/Footer/footer.php";
         font-size: 24px;
         font-weight: bold;
         margin-bottom: 10px;
-        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         text-align: center;
+        color:white;
+        padding: 5px;
+        background-color:rgba(0, 0, 0, 0.75);
     }
 
     .course-description {
         font-size: 18px;
-        text-align: left;
-        margin: 0;
+        text-align: center;
+        margin:auto;
+        margin-bottom: 20px;
+        margin-top: 50px;
         padding: 10px;
-        border-radius: 10px;
         font-style: italic;
+        color:white;
+        padding: 5px;
+        background-color:rgba(0, 0, 0, 0.75);
 
 
     }
@@ -81,13 +101,13 @@ include "../../Components/Footer/footer.php";
         margin-bottom: 100px !important;
     }
 
-    .centerText {
+    /* .centerText {
         text-align: center;
         width: 700px;
         margin: auto;
         margin-top: 100px;
 
-    }
+    } */
 
     .text-danger {
         color: red;

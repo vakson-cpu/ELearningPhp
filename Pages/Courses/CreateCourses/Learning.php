@@ -27,10 +27,14 @@ if ($result->num_rows > 0) {
         echo"</br>";
     }
 } else
-    echo "<h1 class='centerText marginBottom'>You havent started any courses!</h1>";
+echo "<div class='message-wrapper '><h1 class='centerText marginBottom'>You havent started any courses!</h1></div>";
 
 
 echo "</div>";
+echo"<br/>";
+echo"<br/>";
+echo"<br/>";
+echo"<br/>";
 include '../../../Components/Footer/footer.php';
 
 ?>
@@ -41,6 +45,19 @@ include '../../../Components/Footer/footer.php';
 
     }
 
+    .message-wrapper {
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        width: 800px;
+        margin: auto;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 50px;
+        margin-top: 100px;
+        border: 5px solid green;
+        
+    }
     .course-card {
         width: 400px;
         padding: 20px;

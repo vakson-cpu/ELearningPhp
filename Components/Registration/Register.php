@@ -51,7 +51,8 @@ if (isset($_POST["submit"])) {
     if ($ultimateFlag == false) {
         $checkIfexists =  GetUserByID($email, $con);
         if ($checkIfexists != 0) {
-            echo "<script>alert('Email already exsits, registration failed!')"; //OHHH LALALALA OH LALAL ALALLALAL:Skda
+            echo '<script>alert("EMAIL already exists!")</script>';
+            echo '<script>window.location.href="./Register.php";</script>';
             return;
         }
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
@@ -61,7 +62,7 @@ if (isset($_POST["submit"])) {
         if ($error === 0) {
             if ($img_size > 625000) {
                 $em = "File to large!";
-                header("Location:../login.php?error=$em");
+                echo '<script>window.location.href="./Register.php";</script>';
             } else {
 
                 $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); //ekstenzijadokumenta
@@ -76,13 +77,14 @@ if (isset($_POST["submit"])) {
                     $sql2 = "INSERT INTO predavac (`Name`,LastName,DateOfBirth,PlaceOfBirth,Sex,Jmbg,Country,`Password`,Email,UserName,Mobile,`Image`,Accepted,Code,Verified)
                         VALUES ('$name','$lastName','$birthday','$place',true,'$jmbg','$country','$hashedPwd','$email','$username','1231231231','$new_img_name',false,'$generatedCode',false)";
                     if ($zahtev == null || $zahtev != true) $zahtev = false;
+                    echo '<script>alert("Successfully Registered, check mail!")</script>';
                     if ($zahtev == false) {
                         if ($con->query($sql) === true) {
                             senfVerificationMail($email, $generatedCode, $username);
                             echo '<script>alert("Successfully Registered, check mail!")</script>';
                             echo '<script>window.location.href="../SignIn/LoginForm.php";</script>';
+                            return;
                         } else {
-                            $Message = "Something went wrong, make sure to insert correct" . mysqli_connect_error();
                             echo '<script>alert("Failed!")</script>';
                             echo '<script>window.location.href="./Register.php";</script>';
                         }
@@ -91,7 +93,8 @@ if (isset($_POST["submit"])) {
                         senfVerificationMail($email, $generatedCode, $username);
                         echo '<script>window.location.href="../SignIn/LoginForm.php";</script>';
                     } else {
-                        $Message = "Something went wrong, make sure to insert correct" . mysqli_connect_error();
+                        echo '<script>alert("Failed!")</script>';
+                        echo '<script>window.location.href="./Register.php";</script>';
                     }
                 } else {
                     echo '<script>alert("Failed!")</script>';
@@ -99,7 +102,8 @@ if (isset($_POST["submit"])) {
                 }
             }
         } else {
-            echo "GRESKA + $error";
+            echo '<script>alert("Failed!")</script>';
+            echo '<script>window.location.href="./Register.php";</script>';
         }
     }
 }

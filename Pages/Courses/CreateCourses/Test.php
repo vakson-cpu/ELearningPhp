@@ -92,7 +92,7 @@ if (isset($_POST["submit"])) {
         $con->query($updateKurs);
 
         echo '<script>alert(Successfully submited answers!")</script>';
-        echo '<script>window.location.href="./MyCourses.php";</script>';
+        echo '<script>window.location.href="../Course.php";</script>';
 
 
     }

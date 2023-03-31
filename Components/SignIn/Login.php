@@ -11,8 +11,13 @@ if (isset($_POST["Login"])) {
     $data = LogInUser($con, $UserName);
     if ($data->tip != 'admin') {
         if ($data->user["Verified"] == false) {
+            echo '<script>alert("User must be verified! Check your mail!")</script>';
             echo '<script>window.location.href="./LoginForm.php";</script>';
-            echo '<script>alert("User nije verifikovan")</script>';
+            return;
+        }
+        if ($data->user["Accepted"] == false) {
+            echo '<script>alert("User must be accepted by admins")</script>';
+            echo '<script>window.location.href="./LoginForm.php";</script>';
             return;
         }
         $User = $data->user["Password"];
