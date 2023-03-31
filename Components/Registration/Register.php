@@ -3,7 +3,7 @@
 <?php include '../../Functions/validation.php'; ?>
 <?php include '../../Functions/globalFuncs.php'; ?>
 <?php include '../../Configs/MailerBot.php'; ?>
-<?php require_once '../../Shared/CustomResponse.php';?>
+<?php require_once '../../Shared/CustomResponse.php'; ?>
 
 <?php
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
@@ -11,8 +11,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 $Flags = array(false, false, false, false, false, false, false);
 $Message = "";
 if (isset($_POST["submit"])) {
-    echo "HAAAAA";
-    $zahtev=false;
+    $zahtev = false;
     $name = $_POST["name"];
     $lastName = $_POST["lastname"];
     $email = $_POST["Email"];
@@ -50,22 +49,20 @@ if (isset($_POST["submit"])) {
             $ultimateFlag = true;
     }
     if ($ultimateFlag == false) {
-        $checkIfexists =  GetUserByID($email,$con);
-        if($checkIfexists!=0){
-            echo"<script>alert('Email already exsits, registration failed!')"; //OHHH LALALALA OH LALAL ALALLALAL:Skda
-            return ;
-        }    
+        $checkIfexists =  GetUserByID($email, $con);
+        if ($checkIfexists != 0) {
+            echo "<script>alert('Email already exsits, registration failed!')"; //OHHH LALALALA OH LALAL ALALLALAL:Skda
+            return;
+        }
         $hashedPwd = password_hash($password, PASSWORD_DEFAULT);
         $username = GenerateUserName($con, $name, $lastName);
         $generatedCode = $key = substr(md5(time() . $username), 0, 10);
-        echo "<h1>harr</h1>";
 
         if ($error === 0) {
             if ($img_size > 625000) {
                 $em = "File to large!";
                 header("Location:../login.php?error=$em");
             } else {
-                echo "<h1>harr</h1>";
 
                 $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); //ekstenzijadokumenta
                 $img_ex_lc = strtolower($img_ex);
@@ -78,31 +75,27 @@ if (isset($_POST["submit"])) {
                         VALUES ('$name','$lastName','$birthday','$place',true,'$jmbg','$country','$email','$hashedPwd','$username',true,'1231231231','$new_img_name','$generatedCode',false)";
                     $sql2 = "INSERT INTO predavac (`Name`,LastName,DateOfBirth,PlaceOfBirth,Sex,Jmbg,Country,`Password`,Email,UserName,Mobile,`Image`,Accepted,Code,Verified)
                         VALUES ('$name','$lastName','$birthday','$place',true,'$jmbg','$country','$hashedPwd','$email','$username','1231231231','$new_img_name',false,'$generatedCode',false)";
-                    if ($zahtev == null || $zahtev !=true) $zahtev = false;
-                    echo "<h1>ha</h1>";
+                    if ($zahtev == null || $zahtev != true) $zahtev = false;
                     if ($zahtev == false) {
-                        echo"Tu JE";
                         if ($con->query($sql) === true) {
                             senfVerificationMail($email, $generatedCode, $username);
                             echo '<script>alert("Successfully Registered, check mail!")</script>';
                             echo '<script>window.location.href="../SignIn/LoginForm.php";</script>';
                         } else {
-                            echo " HAAAAAAS";
                             $Message = "Something went wrong, make sure to insert correct" . mysqli_connect_error();
                             echo '<script>alert("Failed!")</script>';
                             echo '<script>window.location.href="./Register.php";</script>';
-
                         }
                     }
                     if ($con->query($sql2) === true && $zahtev == true) {
                         senfVerificationMail($email, $generatedCode, $username);
                         echo '<script>window.location.href="../SignIn/LoginForm.php";</script>';
-
                     } else {
                         $Message = "Something went wrong, make sure to insert correct" . mysqli_connect_error();
                     }
                 } else {
-                    echo "GRESKA";
+                    echo '<script>alert("Failed!")</script>';
+                    echo '<script>window.location.href="./Register.php";</script>';
                 }
             }
         } else {
