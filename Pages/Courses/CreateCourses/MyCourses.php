@@ -9,7 +9,7 @@ $UserName = $_SESSION["UserName"];
 
 $sql = "SELECT  * FROM kurs WHERE Kreator='$UserName'";  //Uzmemo kurs 
 $result = $con->query($sql);
-echo "<h1 class='centerText marginica'>INSIGHTS TO YOUR COURSES!</h1>";
+echo "<h1 class='centerText marginica'>List of your Courses:</h1>";
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         echo '<div class="course-card">';
@@ -19,7 +19,7 @@ if ($result->num_rows > 0) {
         echo '<p class="course-description">' . $row["Opis"] . '</p>';
         if ($row["Created"]){
             echo "<p>Status: Created</p>";
-            echo "<a href='PickCourse.php?IdKursa=" . $row["Id"] . "' '>Visit...</a>";}
+            echo "<a href='/WebProgramiranje/Pages/Courses/PickCourse.php?IdKursa=" . $row["Id"] . "' '>Visit...</a>";}
         else {
             echo "<p class='text-warning'>Status: In progress</p>";
             echo "<a class='text-danger' href='/WebProgramiranje/Pages/Courses/CreateCourses/DodajPitanja.php?IdKursa=" . $row["Id"] . "'>Finish</a>";
@@ -30,6 +30,10 @@ if ($result->num_rows > 0) {
     echo "<h1 class='centerText'>There are no courses made by you</h1>";
     echo "<div class='centerText'><a class='text-danger2' href='/WebProgramiranje/Pages/Courses/CreateCourses/CreateCourse.php'>Create Course</a></div>";
 }
+echo"<br/>";
+echo"<br/>";
+echo"<br/>";
+echo"<br/>";
 include '../../../Components/Footer/footer.php';
 ?>
 <style>
