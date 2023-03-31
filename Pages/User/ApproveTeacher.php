@@ -80,6 +80,12 @@ $numb=$row['Accepted'];
 
 echo "</table>";
 echo "</br>";
+echo "</br>";
+echo "</br>";
+echo "</br>";
+echo "</br>";
+echo "</br>";
+echo "</br>";
 }
 
 
