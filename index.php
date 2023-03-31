@@ -6,6 +6,7 @@
 <html>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js" integrity="sha512-rpLlll167T5LJHwp0waJCh3ZRf7pO6IT1+LZOhAyP6phAirwchClbTZV3iqL3BMrVxIYRbzGTpli4rfxsCK6Vw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -15,6 +16,7 @@
             color: black;
 
         }
+
         .image_size {
             height: 300px;
         }
@@ -47,6 +49,47 @@
         }
 
 
+        .intro-section {
+            padding: 50px 0;
+            margin-bottom: 150px;
+            background-color: white;
+
+        }
+
+        .intro-container {
+            max-width: 80%;
+            margin: 0 auto;
+        }
+
+        .intro-heading {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 30px;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+
+        .intro-paragraph {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            text-align: justify;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .intro-paragraph:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        }
+
 
         .title {
             color: grey;
@@ -75,7 +118,7 @@
             box-shadow: #000;
             margin-top: 30px;
             margin-bottom: 30px;
-            
+
             display: flex;
             justify-content: center;
         }
@@ -104,7 +147,7 @@
         <h2 style="text-align:center">Founders of Elearning</h2>
         <div class="row">
             <div class="card">
-                <img class="image_size" src="./images/Doctor1.jpeg" alt="Jane" style="width:100%">
+                <img class="image_size" src="./Assets/Bwoman.jpg" alt="Jane" style="width:100%">
                 <div class="container">
                     <h2>Ashley</h2>
                     <p class="title">Director</p>
@@ -116,7 +159,7 @@
 
 
             <div class="card">
-                <img class="image_size" src="./images/Doctor2.jpeg" alt="Mike" style="width:100%">
+                <img class="image_size" src="./Assets/Bman1.jpg" alt="Mike" style="width:100%">
                 <div class="container">
                     <h2>Mike Ross</h2>
                     <p class="title">Art Director</p>
@@ -127,7 +170,7 @@
             </div>
 
             <div class="card">
-                <img class="image_size" src="./images/Doctor3.jpg" alt="John" style="width:100%">
+                <img class="image_size" src="./Assets/Bman2.jpg" alt="John" style="width:100%">
                 <div class="container">
                     <h2>John Doe</h2>
                     <p class="title">Designer</p>
@@ -138,6 +181,29 @@
             </div>
         </div>
     </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <section class="intro-section">
+  <div class="intro-container">
+    <h1 class="intro-heading">FAQs</h1>
+    <div class="intro-grid">
+      <p class="intro-paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut sapien vel nibh feugiat rhoncus vel eu mauris. Praesent commodo dui nec efficitur malesuada. Sed at luctus turpis. Sed sodales aliquet est, quis fringilla odio tempus quis.</p>
+      <p class="intro-paragraph">Nam sit amet tellus quis nibh scelerisque fringilla. In euismod lacus et libero rhoncus, at aliquam metus convallis. Fusce sollicitudin risus eget velit malesuada, nec pharetra elit ultrices. Sed eu ex nec ipsum venenatis elementum vel id justo.</p>
+      <p class="intro-paragraph">Pellentesque aliquet lobortis augue a rutrum. Integer quis velit eu libero aliquet faucibus. Nam non massa non velit malesuada lobortis. Proin bibendum ligula ac malesuada aliquam. In vel massa in nisi venenatis pretium.</p>
+    </div>
+  </div>
+</section>
+<br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
 
 </body>
 
